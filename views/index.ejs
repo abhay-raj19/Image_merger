@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Editor</title>
+</head>
+<body>
+  <h1>Upload Your PNG Image</h1>
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/png" required>
+    <label for="background">Choose a background:</label>
+    <select name="background" id="background">
+      <% backgrounds.forEach(background => { %>
+        <option value="<%= background %>"><%= background %></option>
+      <% }) %>
+    </select>
+    <button type="submit">Upload and Process</button>
+  </form>
+</body>
+</html>
